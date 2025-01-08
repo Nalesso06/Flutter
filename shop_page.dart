@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ShopPage extends StatefulWidget {
-  @override
   _ShopPageState createState() => _ShopPageState();
 }
 
