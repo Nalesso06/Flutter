@@ -37,8 +37,6 @@ class _PaginaLoginState extends State<PaginaLogin> {
       ),
     );
   }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
