@@ -7,8 +7,6 @@ class PaginaHome extends StatefulWidget {
   final Map<String, String> datiUtente;
 
   PaginaHome({required this.datiUtente});
-
-  @override
   _PaginaHomeState createState() => _PaginaHomeState();
 }
 
