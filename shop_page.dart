@@ -6,17 +6,13 @@ class ShopPage extends StatefulWidget {
 }
 
 class _ShopPageState extends State<ShopPage> {
-  List<String> carrello = []; // Lista per memorizzare i prodotti aggiunti
-  double totale = 0.0; // Variabile per memorizzare il totale
-
-  // Funzione per aggiungere un prodotto al carrello
+  List<String> carrello = [];
+  double totale = 0.0;
   void aggiungiAlCarrello(String prodotto, double prezzo) {
     setState(() {
-      carrello.add(prodotto); // Aggiunge il prodotto alla lista
-      totale += prezzo; // Aggiorna il totale
+      carrello.add(prodotto); 
+      totale += prezzo; 
     });
-
-    // Mostra un messaggio con i prodotti aggiunti e il totale
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text(
@@ -27,17 +23,16 @@ class _ShopPageState extends State<ShopPage> {
     );
   }
 
-  // Funzione per simulare l'acquisto
+ 
   void simulaAcquisto() {
     if (carrello.isEmpty) {
-      // Se il carrello è vuoto, mostra un messaggio
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text('Il carrello è vuoto!')),
       );
       return;
     }
 
-    // Mostra un dialogo di conferma
+
     showDialog(
       context: context,
       builder: (context) {
@@ -55,10 +50,10 @@ class _ShopPageState extends State<ShopPage> {
             TextButton(
               onPressed: () {
                 setState(() {
-                  carrello.clear(); // Svuota il carrello
-                  totale = 0.0; // Azzera il totale
+                  carrello.clear();
+                  totale = 0.0; 
                 });
-                Navigator.pop(context); // Chiudi il dialogo
+                Navigator.pop(context); 
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('Acquisto completato con successo!')),
                 );
@@ -70,8 +65,6 @@ class _ShopPageState extends State<ShopPage> {
       },
     );
   }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -224,7 +217,6 @@ class _ShopPageState extends State<ShopPage> {
             ),
           ),
           Divider(),
-          // Pulsante per simulare l'acquisto
           ElevatedButton(
             onPressed: simulaAcquisto,
             child: Text('Acquista ora'),
@@ -233,7 +225,6 @@ class _ShopPageState extends State<ShopPage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Mostra il contenuto del carrello e il totale
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(
