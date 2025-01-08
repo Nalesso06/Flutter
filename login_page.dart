@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 
 class PaginaLogin extends StatefulWidget {
-  @override
   _PaginaLoginState createState() => _PaginaLoginState();
 }
 
